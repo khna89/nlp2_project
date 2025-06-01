@@ -1,0 +1,5 @@
+In this project, we investigate methods for generating assistant responses that are aligned with human preferences in multi-turn dialogue, comparing the effectiveness of prompting (ICL), parameter-efficient fine-tuning (QLoRA), and preference-based optimization (DPO). Our results suggest that QLoRA is an effective quick win, and DPO does improve the performance further. Across all the setups few-shot generation works slightly better than zero-shot. All in all we were able to improve the pairwise win rate from 35.5% to 66.3%.
+
+The project works with LLaMA 2 7B, which we further quantise in order to fit it on one free-tire GPU for most of the experiments. We did utilize a bigger GPU for the DPO-fine-tuning, however, we still quantised the model in order for the setups to be comparable. As a result, the project is reproducible with free-tire compute power. We also show that even on this level of compute, significant gains could be achieved with multi-step targeted fine-tuning. 
+
+In order to fine-tune the model, use the notebook Fine-tuning... . In order to assess performance in all three setups (ICL, QLoRA and DPO), use the notebook CL, PPL, PWR... . 
